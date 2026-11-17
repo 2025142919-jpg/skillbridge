@@ -1,0 +1,34 @@
+SkillBridge photo credits
+All photographs: Unsplash (https://unsplash.com), Unsplash License (https://unsplash.com/license).
+Source collection: https://github.com/ServiceStack/images (hand-picked Unsplash photos).
+Resized and converted to WebP for this project.
+
+Local file	Original Unsplash file
+bokeh-lights.webp	photo-1478428036186-d435e23988ea.jpg
+camera-lens.webp	photo-1486692957922-ea51ea8472bc.jpg
+camera-vintage.webp	photo-1495743853775-60402c6c643e.jpg
+city-aerial.webp	photo-1483653085484-eb63c9f02547.jpg
+city-neon.webp	photo-1498036882173-b41c28a8ba34.jpg
+city-night.webp	photo-1503206557829-9a9979ad1227.jpg
+coffee-hands.webp	photo-1422207134147-65fb81f59e38.jpg
+coffee-thanks.webp	photo-1499744937866-d7e566a20a61.jpg
+desk-creative.webp	photo-1488190211105-8b0e65b80b4e.jpg
+desk-notebook.webp	photo-1432821579285-1b649e5b1ce3.jpg
+edison-bulbs.webp	photo-1496688519089-de7d4b5c05d7.jpg
+event-crowd.webp	photo-1485889397316-8393dd065127.jpg
+festive-flatlay.webp	photo-1507980062492-714282f31ee0.jpg
+flatlay-letter.webp	photo-1506440905961-0ab11f2ed5bc.jpg
+keyboard-backlit.webp	photo-1480506132288-68f7705954bd.jpg
+laptop-glow.webp	photo-1468436139062-f60a71c5c892.jpg
+latte.webp	photo-1475241404975-c3ae90fdd9e6.jpg
+light-trails.webp	photo-1484420269607-41d8060e9779.jpg
+market-basket.webp	photo-1509664158680-07c5032b51e5.jpg
+open-road.webp	photo-1477951233099-d2c5fbd878ee.jpg
+pf-lake.webp	photo-1476514525535-07fb3b4ae5f1.jpg
+pf-street.webp	photo-1422360902398-0a91ff2c1a1f.jpg
+pf-temple.webp	photo-1464817739973-0128fe77aaa1.jpg
+sparklers.webp	photo-1467810563316-b5476525c0f9.jpg
+stage-lights.webp	photo-1496208612508-eb52fba7d94e.jpg
+typewriter.webp	photo-1505682499293-233fb141754c.jpg
+
+Logos (assets/images/logos), favicon and portfolio pieces (assets/images/portfolio): original work created for SkillBridge.
