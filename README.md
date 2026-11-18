@@ -1,6 +1,6 @@
 # SkillBridge
 
-**Live website:** https://USERNAME.github.io/REPO/
+**Live website:** https://2025142919-jpg.github.io/skillbridge/
 **Repository:** https://github.com/USERNAME/REPO
 
 IMS566 Advanced Web Design Development and Content Management · Individual Project
