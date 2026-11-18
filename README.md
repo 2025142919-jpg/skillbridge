@@ -1,7 +1,7 @@
 # SkillBridge
 
 **Live website:** https://2025142919-jpg.github.io/skillbridge/
-**Repository:** (https://github.com/2025142919-jpg/skillbridge)
+**Repository:** https://github.com/2025142919-jpg/skillbridge
 
 IMS566 Advanced Web Design Development and Content Management · Individual Project
 Muhammad Faid bin Mohd Zaid · UiTM
