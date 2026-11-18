@@ -1,126 +1,136 @@
 # SkillBridge
 
-**Connecting student skills with real opportunities.**
-A Malaysia-focused freelance and part-time platform for university students, built as a frontend
-demonstration for IMS566 Advanced Web Design & Development (UiTM) by Muhammad Faid bin Mohd Zaid.
+**Live website:** https://USERNAME.github.io/REPO/
+**Repository:** https://github.com/USERNAME/REPO
 
-> Independent student project, not an official UiTM service. Every person, company, job, review and
-> payment figure is fictional sample data. Place names are real Malaysian locations.
+IMS566 Advanced Web Design Development and Content Management · Individual Project
+Muhammad Faid bin Mohd Zaid · UiTM
 
 ---
 
-## Running it locally
+## 1. Project title & description
 
-1. Unzip the folder and open it in **VS Code**.
-2. Install the **Live Server** extension (Ritwick Dey) if you don't have it.
-3. Right-click `index.html` → **Open with Live Server**.
+**SkillBridge: Connecting student skills with real opportunities.**
 
-Any static server works too, for example `python -m http.server 8000` and then visit
-`http://localhost:8000`. No build step, no npm install and no internet connection are needed: Bootstrap, Bootstrap Icons, Chart.js, jsPDF and the fonts are all stored in `assets/vendor/`.
+SkillBridge is a web application interface for a Malaysia-focused freelance and part-time job
+platform for university students. Students can find digital work (web development, design,
+admin, marketing) and on-site work (event crew, lighting and sound, photography, F&B), apply with
+a proposal and track their projects. Employers can post jobs, review applicants, search for
+students by their free hours and manage hired projects.
 
-## Publishing on GitHub Pages
+Every job listing shows its real costs up front: pay, allowances (transport, meals,
+accommodation), equipment the student must bring, overtime and payment terms. A take-home
+calculator helps students decide before they apply.
 
-1. Create a new public repository on GitHub (e.g. `skillbridge`).
-2. Upload the **contents** of this folder so that `index.html` sits in the repository root
-   (not inside a `skillbridge/` subfolder).
-3. Go to **Settings → Pages**, set *Source* to **Deploy from a branch**, choose `main` and `/ (root)`, then save.
-4. After a minute the site is live at `https://<username>.github.io/skillbridge/`.
+This is a front-end prototype. All companies, people, jobs and reviews are fictional sample data,
+and no real payments or messages are processed.
 
-Hash routing (`#/jobs`) means every page works on GitHub Pages without any server configuration.
-Developed and tested in Google Chrome.
+## 2. Features included
 
-## Demo logins
+**Authentication**
+- Login with hardcoded demo accounts and clear error messages for wrong username or password
+- 3-step registration (account type → details → profile) with form validation and a password-strength meter
 
-The login page has one-click buttons for these accounts.
+**Navigation**
+- Consistent top navigation bar on every page, plus a sidebar menu after login
+- Responsive layout for desktop, tablet and mobile (slide-out menu on small screens)
+- Light and dark mode
 
-| Role | Username | Password | Who |
+**Dashboards**
+- Student dashboard: summary statistics, upcoming milestones, applications chart, recommended jobs, free-hours overview and recent messages
+- Employer dashboard: summary statistics, applicants-per-listing chart, hiring pipeline chart, recent applicants table and active projects
+
+**Data view pages**
+- Explore Jobs: search, filters (type, category, arrangement, city, pay, perks), sorting, and grid or list view
+- Job Details: dates, hours, venue, logistics, equipment, pay terms and a take-home calculator
+- Applications & Saved Jobs: table of applications with status tabs, sorting and withdraw option
+- Job Listings & Applicants (employer): shortlist, interview, hire or decline applicants
+- Talent Search (employer): find students by skill, programme, university and available day/time
+- Projects: board view (In progress / In review / Completed) with milestones, files and activity
+
+**Data visualisation (Chart.js)**
+- Applications by status (doughnut), Applicants per listing (bar), Hiring pipeline (doughnut) and Skills practised from completed projects (bar)
+- Charts use real data from the app, show tooltips on hover, and legend items can be clicked to hide or show data
+
+**Other features**
+- Student profile and portfolio with image upload preview and a weekly free-hours grid (click or drag)
+- Match score for each job based on course, skills, free hours and location
+- Post a job with a 4-step form and live preview
+- Messages between students and employers (demo replies are simulated)
+- Notifications, reviews and star ratings
+- CV download as PDF (jsPDF)
+- Home, How It Works, About and Contact (with validated form and FAQ) pages
+- Footer on every page, page titles that change per page, meta description and structured sections
+
+## 3. Instructions to test login
+
+1. Open the live website link above in **Google Chrome**.
+2. Click **Log in** (top right).
+3. Enter one of the demo accounts below, or click a demo account button on the login page to fill it in automatically.
+
+| Role | Username | Password | Lands on |
 |---|---|---|---|
-| Student | `student` | `student123` | Aina Sofea Rahman, Information Management, UiTM Shah Alam |
-| Employer | `employer` | `employer123` | Teratai Events (event management, KL) |
+| Student | `student` | `student123` | Student dashboard (Aina Sofea Rahman, UiTM Shah Alam) |
+| Employer | `employer` | `employer123` | Employer dashboard (Teratai Events) |
 
-More sample students: `student2` to `student5` (password `student123`).
-More sample employers: `employer2`, `employer3`, `employer4`, `employer7`, `employer8` (password `employer123`).
-You can also register a new student or employer account. It lasts until you refresh.
+To see the error message, enter a wrong username or password.
 
-## Demo vs. real backend
+More sample accounts: `student2` to `student5` (password `student123`); `employer2`, `employer3`,
+`employer4`, `employer7`, `employer8` (password `employer123`).
 
-* **No LocalStorage, SessionStorage or cookies.** All data lives in memory (`js/store.js`) and is
-  restored to the sample data when the page is refreshed.
-* Because of that, SkillBridge is a **single-page app with hash routing** (`#/jobs`, `#/jobs/j102`,
-  `#/student`…). Moving between pages keeps your session and changes. A full page reload resets them.
-* Every page reads and writes through a **mock API** (`SB.api.get / post / patch / del`) with a short
-  artificial delay, so the GET/POST request flow is the same as with a real server. Explore filters
-  are reflected in the URL query string (GET), and forms submit POST/PATCH requests.
-* **Not real:** authentication (passwords are plain JavaScript), payments (pay is arranged between
-  employer and student), messaging (replies are simulated and labelled "demo auto-reply") and file
-  uploads (only the file name is recorded; portfolio images stay in the browser tab).
-* Sample data: 5 students, 6 employers, 8 job categories and 13 open jobs.
-* The app runs on a fixed demo date of **19 November 2026**, so sample deadlines always make sense.
+**Note:** this is a demo without a database. Logins and changes (applications, posted jobs,
+messages) are kept in memory and reset when the page is refreshed. Move between pages using the
+menu instead of refreshing.
 
-## Pages (routes)
+**Suggested test flow**
+- *Student:* Explore jobs → open "LED wall installation & dismantling assistant" → move the take-home slider → Apply → check Applications and Notifications → Growth & records → Download CV.
+- *Employer:* My job listings → "Year-end corporate dinner crew" → Shortlist and Hire an applicant (a project is created) → Post a job → Find talent free on Saturday 9am–5pm.
 
-| Area | Route |
-|---|---|
-| Home | `#/` |
-| Explore jobs (search, filters, sort, grid/list) | `#/jobs` |
-| Job details (logistics, costs, take-home calculator, apply) | `#/jobs/:id` |
-| Company profile | `#/companies/:id` |
-| How it works · About · Contact & FAQ | `#/how-it-works` · `#/about` · `#/contact` |
-| Log in · Register (3-step) | `#/login` · `#/register` |
-| Student dashboard | `#/student` |
-| Applications & saved jobs | `#/applications` |
-| Profile, portfolio, free-hours grid, experience, reviews | `#/profile` |
-| Growth & records (skills chart, CV download as PDF) | `#/growth` |
-| Employer dashboard | `#/employer` |
-| Job listings & applicants (shortlist, interview, hire, decline) | `#/employer/jobs`, `#/employer/jobs/:id` |
-| Post / edit a job (4-step form with live preview) | `#/post-job` |
-| Talent search & student profiles | `#/talent`, `#/talent/:id` |
-| Projects board & project detail (milestones, files, reviews) | `#/projects`, `#/projects/:id` |
-| Messages · Notifications | `#/messages` · `#/notifications` |
+## 4. Frameworks / libraries used
 
-## Things to try
+| Framework / library | Version | Used for |
+|---|---|---|
+| [Bootstrap](https://getbootstrap.com) | 5.3.3 | Grid layout, responsive utilities, modals, dropdowns, collapse, offcanvas menu |
+| [Bootstrap Icons](https://icons.getbootstrap.com) | 1.11.3 | Icons throughout the interface |
+| [Chart.js](https://www.chartjs.org) | 4.4.3 | Dashboard and growth charts |
+| [jsPDF](https://github.com/parallax/jsPDF) | 2.5.1 | Generating the downloadable CV (PDF) |
+| [Inter](https://rsms.me/inter/) & [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) | – | Typography |
 
-1. **Student:** explore on-site jobs with "Transport covered", open *LED wall installation*, move the
-   take-home slider, apply, then check Applications and Notifications. Paint your free hours in
-   Profile → Free hours and watch match scores change. Download your CV from Growth & records.
-2. **Employer:** open *Year-end corporate dinner crew*, shortlist and hire an applicant (a project is
-   created), then post a new job and watch the live preview and take-home estimate update.
-   Search talent free on Saturday 9am–5pm.
-3. Switch to **dark mode** (moon icon) and see the charts adapt.
+All libraries and fonts are stored locally in `assets/vendor/`, so the site works without loading
+anything from a CDN.
+
+The rest is written by hand in **HTML5, CSS3** (custom properties, Grid, Flexbox, light/dark
+themes) and **vanilla JavaScript** (hash router, in-memory data, form validation, DOM rendering).
+
+---
+
+## Running locally
+
+1. Open the project folder in VS Code.
+2. Install the **Live Server** extension.
+3. Right-click `index.html` → **Open with Live Server**.
 
 ## Project structure
 
 ```
-index.html            App shell (nav, main, footer) and script order
-css/base.css          Design tokens, light/dark themes, typography
-css/components.css    Buttons, forms, cards, job cards, tables, chat, sidebar, toasts
+index.html            Page shell: navigation, main area, footer, script order
+css/base.css          Colours, light/dark themes and typography
+css/components.css    Buttons, forms, cards, tables, chat, sidebar
 css/pages.css         Page layouts and responsive rules
-js/data.js            Sample data: categories, users, jobs, applications, projects, reviews…
-js/store.js           In-memory state, formatting, matching score, cost estimates, mock API
-js/ui.js              Components, modal, toast, validation, theme, Chart.js helper
-js/app.js             Hash router, navigation, sidebar, footer
-js/pages/*.js         One file per area: public, auth, student, employer, shared
-assets/images/        Photos (WebP), employer logos (SVG), portfolio pieces, favicon
-assets/vendor/        Bootstrap 5.3.3, Bootstrap Icons 1.11.3, Chart.js 4.4.3, jsPDF 2.5.1, fonts
+js/data.js            Sample data: categories, students, employers, jobs, applications…
+js/store.js           In-memory data, match score, cost estimate, mock GET/POST API
+js/ui.js              Reusable components, modal, toast, form validation, charts
+js/app.js             Router (hash URLs), navigation, sidebar, footer
+js/pages/*.js         Pages: public, auth, student, employer, shared
+assets/images/        Photos, employer logos, portfolio images, favicon
+assets/vendor/        Bootstrap, Bootstrap Icons, Chart.js, jsPDF, fonts
 ```
 
-## Kept from the original SkillBridge
-
-The match score (course 30 · skills 30 · free hours 25 · place 15), the weekly availability overlap
-used for talent search, recommendations "for your course" and "beyond your course", skill levels
-from completed projects (1 = Beginner, 2 = Intermediate, 3+ = Advanced), course-relevance %, PDF
-export with jsPDF and the proposal status rules.
+SkillBridge is a single-page application: `index.html` loads once and pages are switched with
+JavaScript using URLs such as `#/jobs`, `#/jobs/j102` and `#/student`. This keeps the logged-in
+user and their changes in memory while moving between pages, without LocalStorage or a database.
 
 ## Image credits
 
-* **Photographs** are from [Unsplash](https://unsplash.com) under the
-  [Unsplash License](https://unsplash.com/license), sourced from the curated
-  [ServiceStack/images](https://github.com/ServiceStack/images) collection. Original Unsplash file
-  IDs are listed in `assets/images/CREDITS.txt`.
-* **Employer logos, favicon and portfolio pieces** (posters, spreadsheet, website and calendar
-  mock-ups) were created for this project.
-* Student avatars use initials rather than photos, since the students are fictional.
-
-## Browser support
-
-Latest Chrome, Edge, Firefox and Safari. Uses CSS `color-mix()`, `:has()` and `backdrop-filter`.
+- Photographs: [Unsplash](https://unsplash.com) under the [Unsplash License](https://unsplash.com/license), via the [ServiceStack/images](https://github.com/ServiceStack/images) collection. Full list in `assets/images/CREDITS.txt`.
+- Employer logos, favicon and portfolio images were created for this project.
